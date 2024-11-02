@@ -8,6 +8,7 @@ return - tuple()
 
 
 def index_range(page, page_size):
+    
     '''
     Function that take two int argu and return tuple containing start and an end index
     '''
@@ -15,3 +16,4 @@ def index_range(page, page_size):
         return (page - 1, page_size)
     else:
         return ((page - 1) * page_size, page_size * page)
+

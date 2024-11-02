@@ -4,6 +4,10 @@ import csv
 import math
 from typing import List
 
+'''
+simple pagination
+'''
+
 
 def index_range(page, page_size):
 

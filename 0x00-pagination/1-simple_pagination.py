@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
-import csv
-import math
-from typing import List
 
 '''
 simple pagination
 '''
+
+import csv
+import math
+from typing import List
 
 
 def index_range(page, page_size):

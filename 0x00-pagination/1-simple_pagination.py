@@ -4,6 +4,7 @@ import csv
 import math
 from typing import List
 
+
 def index_range(page, page_size):
 
     '''
@@ -13,6 +14,7 @@ def index_range(page, page_size):
         return (page - 1, page_size)
     else:
         return ((page - 1) * page_size, page_size * page)
+
 
 class Server:
     """
@@ -36,16 +38,19 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            assert(isinstance(page, int))
-            assert(page > 0)
-            assert(isinstance(page_size, int))
-            assert(page_size > 0)
+        '''
+        function that retrive data acoriding to the pagination
+        '''
+        assert (isinstance(page, int))
+        assert (page > 0)
+        assert (isinstance(page_size, int))
+        assert (page_size > 0)
 
-            start_index, end_index = index_range(page, page_size)
-            dataset = self.dataset()
+        start_index, end_index = index_range(page, page_size)
+        dataset = self.dataset()
 
-            # Check if the start index is out of range
-            if start_index >= len(dataset):
-                return []  # Return an empty list if the page is out of range
+        # Check if the start index is out of range
+        if start_index >= len(dataset):
+            return []  # Return an empty list if the page is out of range
 
-            return dataset[start_index:end_index]  # Return the sliced dataset
+        return dataset[start_index:end_index]  # Return the sliced dataset

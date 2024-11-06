@@ -58,15 +58,15 @@ class Server:
             return []  # Return an empty list if the page is out of range
 
         return dataset[start_index:end_index]  # Return the sliced dataset
-    
+
     def get_hyper(self, page=1, page_size=10):
         """
         Returns a dictionary with pagination details.
-        
+
         Args:
         - page (int): The current page number (default is 1).
         - page_size (int): Number of items per page (default is 10).
-        
+
         Returns:
         - dict: A dictionary containing pagination details.
         """
@@ -83,7 +83,7 @@ class Server:
             'page_size': len(data),  # The length of the dataset on this page
             'page': page,            # The current page number
             'data': data,            # The dataset for this page
-            'next_page': next_page,  # The next page number or None if it's the last page
-            'prev_page': prev_page,  # The previous page number or None if it's the first page
+            'next_page': next_page,  # The next page number or None
+            'prev_page': prev_page,  # The previous page number or None
             'total_pages': total_pages  # The total number of pages
         }
